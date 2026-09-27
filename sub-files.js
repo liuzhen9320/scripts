@@ -1,5 +1,5 @@
 /**
- * Substore 订阅转换脚本
+ * Sub-store 订阅转换脚本
  *
  * - loadbalance: 启用负载均衡 (false)
  * - landing: 启用落地节点功能 (false)
@@ -233,9 +233,15 @@ const rules = [
   /// 直连 -> 流媒体省流量
   "DOMAIN,d1m7jfoe9zdc1j.cloudfront.net,直连",
   "DOMAIN-SUFFIX,cloudfront.net,直连",
+  /// 哔哩哔哩特殊规则
   "DOMAIN-SUFFIX,bilivideo.cn,直连",
   "DOMAIN-SUFFIX,bilivideo.com,直连",
   "DOMAIN-SUFFIX,bilivideo.net,直连",
+  "DOMAIN-SUFFIX,hdslb.com,直连",
+  "DOMAIN-SUFFIX,hdslb.net,直连",
+  "DOMAIN-SUFFIX,hdslb.org,直连",
+  "DOMAIN,mall.bilibili.com,直连",
+  "DOMAIN,httpdns.bilivideo.com,拦截",
   // 拦截
   "RULE-SET,ADBlock,拦截",
   "RULE-SET,ZhihuADs,拦截",
