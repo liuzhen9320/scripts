@@ -1,5 +1,5 @@
 /**
- * Sub-store 订阅转换脚本
+ * Substore 订阅转换脚本
  *
  * - loadbalance: 启用负载均衡 (false)
  * - landing: 启用落地节点功能 (false)
@@ -230,6 +230,12 @@ const ruleProviders = {
 const rules = [
   // 内网
   "RULE-SET,LAN,直连",
+  /// 直连 -> 流媒体省流量
+  "DOMAIN,d1m7jfoe9zdc1j.cloudfront.net,直连",
+  "DOMAIN-SUFFIX,cloudfront.net,直连",
+  "DOMAIN-SUFFIX,bilivideo.cn,直连",
+  "DOMAIN-SUFFIX,bilivideo.com,直连",
+  "DOMAIN-SUFFIX,bilivideo.net,直连",
   // 拦截
   "RULE-SET,ADBlock,拦截",
   "RULE-SET,ZhihuADs,拦截",
@@ -237,9 +243,6 @@ const rules = [
   "RULE-SET,MeituanOverseas,拦截",
   "RULE-SET,PCDN,拦截",
   "RULE-SET,HTTPDNS,拦截",
-  // 静态
-  "RULE-SET,StaticResources,静态资源",
-  "RULE-SET,CDNResources,静态资源",
   // 直连
   "RULE-SET,SteamFix,直连",
   "RULE-SET,GoogleFCM,直连",
@@ -247,11 +250,6 @@ const rules = [
   "GEOSITE,YOUTUBE@CN,直连",
   "GEOSITE,CATEGORY-SCHOLAR-CN,直连",
   "GEOSITE,MICROSOFT@CN,直连",
-  "GEOSITE,CN,直连",
-  "GEOSITE,PRIVATE,直连",
-  "DOMAIN-SUFFIX,local,直连",
-  "GEOIP,CN,直连",
-  "GEOIP,PRIVATE,直连",
   // 常见
   "RULE-SET,AI,AI",
   "RULE-SET,TikTok,TikTok",
@@ -265,6 +263,9 @@ const rules = [
   "GEOSITE,SPOTIFY,Spotify",
   "GEOSITE,BILIBILI,Bilibili",
   "GEOSITE,GFW,节点选择",
+  // 静态
+  "RULE-SET,StaticResources,静态资源",
+  "RULE-SET,CDNResources,静态资源",
   // STUN
   "RULE-SET,STUN,节点选择",
   "DST-PORT,3478,节点选择",
@@ -276,6 +277,12 @@ const rules = [
   "DST-PORT,22,SSH",
   // 美团
   "RULE-SET,MeiTuan,直连",
+  // 保底
+  "GEOSITE,CN,直连",
+  "GEOSITE,PRIVATE,直连",
+  "DOMAIN-SUFFIX,local,直连",
+  "GEOIP,CN,直连",
+  "GEOIP,PRIVATE,直连",
   // Fallback
   "MATCH,节点选择",
 ];
