@@ -225,6 +225,14 @@ const ruleProviders = {
     url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/BlockHttpDNS/BlockHttpDNS.list",
     path: "./ruleset/BlockHttpDNS.list",
   },
+  HuaweiBlock: {
+    type: "http",
+    behavior: "classical",
+    interval: 86400,
+    format: "text",
+    url: "https://liuzhen9320.github.io/scripts/ruleset/HuaweiBlock.list",
+    path: "./ruleset/HuaweiBlock.list",
+  },
 };
 
 const rules = [
@@ -247,16 +255,10 @@ const rules = [
   "RULE-SET,ZhihuADs,拦截",
   "RULE-SET,BanProgramAD,拦截",
   "RULE-SET,MeituanOverseas,拦截",
+  "RULE-SET,HuaweiBlock,拦截",
+  // "DOMAIN,configserver.platform.hicloud.com,拦截",
   "RULE-SET,PCDN,拦截",
   "RULE-SET,HTTPDNS,拦截",
-  "DOMAIN,grs.dbankcloud.cn,拦截",
-  "DOMAIN,grs.dbankcloud.com,拦截",
-  "DOMAIN,query.hicloud.com,拦截",
-  "DOMAIN,update.dbankcdn.com,拦截",
-  "DOMAIN,betaenroll-drcn.emui.dbankcloud.cn,拦截",
-  "DOMAIN,update-drcn.platform.hicloud.com,拦截",
-  "DOMAIN,cqs-drcn.emui.hicloud.com,拦截",
-  // "DOMAIN,configserver.platform.hicloud.com,拦截",
   // 直连
   "RULE-SET,SteamFix,直连",
   "RULE-SET,GoogleFCM,直连",
@@ -690,7 +692,7 @@ function buildProxyGroups({
     },
     {
       name: "直连",
-      icon: "https://fastly.jsdelivr.netgh/Koolson/Qure@master/IconSet/Color/Direct.png",
+      icon: "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Direct.png",
       type: "select",
       proxies: ["DIRECT", "节点选择"],
     },
