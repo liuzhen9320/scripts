@@ -1,0 +1,8 @@
+# 屏蔽华为手机更新
+DOMAIN,grs.dbankcloud.cn
+DOMAIN,grs.dbankcloud.com
+DOMAIN,query.hicloud.com
+DOMAIN,update.dbankcdn.com
+DOMAIN,betaenroll-drcn.emui.dbankcloud.cn
+DOMAIN,update-drcn.platform.hicloud.com
+DOMAIN,cqs-drcn.emui.hicloud.com
